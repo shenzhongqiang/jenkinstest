@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                retry(3) {sh 'python --version'}
+                retry(3) {sh 'pythonabc --version'}
             }
         }
     }
