@@ -10,9 +10,9 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                echo 'API key: ' + apikey   // Will print the actual value
-                sh "echo API key is: $apikey"
-                echo 'API key: ' + env.apikey   // This works
+                withCredentials([string(credentialsId: 'apikey', variable: 'APIKEY')]) {
+                  echo "API Key: ${APIKEY}"  // May be masked in logs
+                }
             }
         }
     }
