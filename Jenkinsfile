@@ -10,8 +10,7 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                echo "${http_proxy}"
-                echo '${http_proxy}'
+                sh("curl -u ${apikey}:${apikey} https://example.com/")
             }
         }
     }
