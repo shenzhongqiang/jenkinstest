@@ -10,9 +10,8 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                withCredentials([string(credentialsId: 'apikey', variable: 'APIKEY')]) {
-                  echo "API Key: ${APIKEY}"  // May be masked in logs
-                }
+                echo "${http_proxy}"
+                echo '${http_proxy}'
             }
         }
     }
