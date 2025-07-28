@@ -23,5 +23,8 @@ pipeline {
         failure {
             echo "failure"
         }
+        changed {
+            echo "changed"
+        }
     }
 }
