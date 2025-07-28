@@ -11,6 +11,8 @@ pipeline {
         stage('build') {
             steps {
                 echo 'API key: ' + apikey   // Will print the actual value
+                sh "echo API key is: $apikey"
+                echo 'API key: ' + env.apikey   // This works
             }
         }
     }
