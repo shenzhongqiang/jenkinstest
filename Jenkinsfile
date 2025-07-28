@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                echo $http_proxy
+                echo ${http_proxy}
             }
         }
     }
