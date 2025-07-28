@@ -5,11 +5,12 @@ pipeline {
         http_proxy = 'http://127.0.0.1:10809'
         https_proxy = 'http://127.0.0.1:10809'
         no_proxy = 'localhost,127.0.0.1,github.com'
+        apikey = credentials('apikey')
     }
     stages {
         stage('build') {
             steps {
-                echo "${http_proxy}"
+                echo "${apikey}"
             }
         }
     }
