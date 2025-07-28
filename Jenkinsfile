@@ -15,6 +15,7 @@ pipeline {
             steps {
                 echo "${params.Greeting} world"
                 sh 'pwd'
+                sh 'chmod a+x deploy.sh'
                 sh './deploy.sh'
             }
         }
