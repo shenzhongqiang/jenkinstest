@@ -10,7 +10,7 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                echo "${apikey}"
+                echo 'API key: ' + apikey   // Will print the actual value
             }
         }
     }
