@@ -14,7 +14,8 @@ pipeline {
         stage('build') {
             steps {
                 echo "${params.Greeting} world"
-                sh "deploy.sh"
+                sh 'pwd'
+                sh './deploy.sh'
             }
         }
     }
