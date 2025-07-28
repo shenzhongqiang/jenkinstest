@@ -7,10 +7,13 @@ pipeline {
         no_proxy = 'localhost,127.0.0.1,github.com'
         apikey = credentials('apikey')
     }
+    parameters {
+        string(name: 'Greeting', defaultValue: 'Hello', description: 'How should I greet the world?')
+    }
     stages {
         stage('build') {
             steps {
-                sh("curl -u ${apikey}:${apikey} https://example.com/")
+                echo "${params.Greeting} world"
             }
         }
     }
